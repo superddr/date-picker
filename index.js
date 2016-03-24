@@ -68,7 +68,7 @@ export var SinglePicker = React.createClass({
                     onChange={o=>this.setState({view:copyDate(o)})} 
                     onCancel={this.toggle}
                     onConfirm={this.onChange}
-                    verify={this.props.verify}
+                    available={this.props.available}
                 />
             </div>}
         </div>;
@@ -146,7 +146,7 @@ export var RangePicker = React.createClass({
                     onConfirm={this.onChange}
                     position={'from'}
                     style={{left:-1,top:0}}
-                    verify={this.props.verify}
+                    available={this.props.available}
                 />
 
                 <Panel 
@@ -157,7 +157,7 @@ export var RangePicker = React.createClass({
                     onConfirm={this.onChange}
                     position={'to'}
                     style={{left:params.left-1,top:0,borderLeftWidth:1}}
-                    verify={this.props.verify}
+                    available={this.props.available}
                 />
             </div>}
         </div>;

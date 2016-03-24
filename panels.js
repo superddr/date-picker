@@ -25,7 +25,7 @@ export default React.createClass({
         this.setState({ currentView: copy(this.state.currentView, year, month,date)});
     },
     select(e) {
-        return this.verify(e) && this.props.onChange(new Date(e));
+        return this.available(e) && this.props.onChange(new Date(e));
     },
     today(){
         this.setState({ currentView: copy(new Date()) });
@@ -40,8 +40,8 @@ export default React.createClass({
             'year':this.renderYear
         }[this.props.type]();
     },
-    verify(date){
-        return !this.props.verify || this.props.verify(date,this.props.type);
+    available(date){
+        return !this.props.available || this.props.available(date,this.props.type);
     },
     getPanelClassName(){
         return styles.panel + ' ' + styles[this.props.position || 'single'];
@@ -53,7 +53,7 @@ export default React.createClass({
             style={{width:width}}
             className={
                 (today == current.getTime()? styles.highLight:'') 
-                + ' ' + (this.verify(current) ? styles.available:'')
+                + ' ' + (this.available(current) ? styles.available:'')
             }
         >
             {title}
