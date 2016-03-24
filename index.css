@@ -1,0 +1,182 @@
+#container{
+	font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	height: 30px;
+    color: white;
+    position: relative;
+    overflow: visible;
+    line-height: 28px;
+}
+
+#container *{
+	box-sizing: border-box;
+	user-select:none;
+}
+
+.left{
+	left: 0;
+	background:url(./imgs/left.png);
+}
+.right{
+	right: 0;
+	background:url(./imgs/right.png);
+}
+
+.left,.right{
+	width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    cursor: pointer
+}
+
+
+.middle{
+    position: absolute;
+    left: 30px;
+    height: 30px;
+    border-radius: 3px;
+    border: solid 1px #28c6de;
+    background-color:rgba(0,0,0,0.4);
+    cursor: pointer;
+    padding-left: 11px;
+    width: calc(100% - 60px)
+}
+
+.bigPanel{
+    border: solid 1px #28c6de;
+    border-radius: 3px;
+    position: absolute;
+    left: 30px;
+    top: 32px;
+    overflow: hidden;
+}
+
+.panel{
+ 	position: absolute;
+ 	background-color: rgba(0,0,0,0.85);
+    left:-1px;
+    line-height: 28px;
+    border: solid 0 #28c6de;
+}
+.panel *{
+    box-sizing: border-box;
+    user-select:none;   
+}
+
+
+.title{
+	height:30px;
+    color:#28c6de;
+    font-weight:bold;
+    background-color:black;
+    padding-left:11px;
+}
+
+
+.forward{
+	background: url(./imgs/forward.png);
+	right: 26px;
+}
+.backward{
+	background: url(./imgs/backward.png);
+	left: 26px;
+}
+.fastforward{
+	background: url(./imgs/fastforward.png);
+	right: 0;
+}
+.fastbackward{
+	background: url(./imgs/fastbackward.png);
+	left: 0;
+}
+
+.calendar{
+	background: url(./imgs/calendar.png);
+	right: 0;
+	width: 30px;
+}
+
+.title > span,.calendar{
+	position: absolute;
+	width: 26px;
+	height: 30px;
+	background-repeat: no-repeat;
+	background-position: center center;
+	cursor: pointer;
+}
+.title > .titleMiddle{
+ 	position: absolute;
+    width: 100%;
+	left:0;
+	text-align: center;
+}
+
+
+.content > div{
+	width: 30px;
+	height: 30px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    color: rgba(255,255,255,0.5);
+    vertical-align: middle;
+}
+
+.content > div.highLight{
+    border: solid 1px #28c6de;
+    background-color:rgba(43,116,125,1);
+}
+    
+.content > div.available{
+    color: white;
+}
+
+.buttons{
+    width: 100%;
+    height: 30px;
+    border-top: solid 1px #28c6de;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    color: #28c6de;
+}
+.cancelButton{
+    width:33%;
+    border-right:solid 1px #28c6de;
+    position:absolute
+}
+
+.todayButton{ 
+	width: 33%;
+	left: 33%;
+	position: absolute;
+}
+.confirmButton{ 
+    width: 33%;
+    border-left: solid 1px #28c6de; 
+    right: 0;
+    position: absolute;
+}
+
+.from .buttons div,.to .buttons div{
+	width: 50%;
+}
+.from .confirmButton,.to .cancelButton{
+	display: none
+}
+
+.from .todayButton{
+	left:50%;
+}
+.from .todayButton:before{
+	content:'起始于';
+}
+
+.to .todayButton{
+	left:0;
+}
+.to .todayButton:before{
+	content:'截止于';
+}
