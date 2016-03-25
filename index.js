@@ -163,3 +163,6 @@ export var RangePicker = React.createClass({
         </div>;
     }
 });
+
+alert(1)
+
